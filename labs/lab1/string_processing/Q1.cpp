@@ -13,18 +13,15 @@ int myLength(const char s[])
 char *substring(char *s, int ip, int len, char *dest)
 {
 
-    cout << "pass\n";
-
     int count = 0;
     int i = ip;
     while (count < len)
     {
-        cout << "pass\n";
+        
 
         dest[count++] = s[i++];
     }
     dest[count] = '\0';
-    cout << "pass\n";
     return dest;
 }
 
