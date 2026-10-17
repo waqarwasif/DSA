@@ -1,19 +1,26 @@
 
 #include <iostream>
 using namespace std;
-
+template <typename T>
 class Stack
 {
 private:
-    static const int SIZE = 5;
-    int arr[SIZE];
+    int size;
+    T *arr;
     int top;
 
 public:
     // Constructor
-    Stack()
+    Stack(int n)
     {
+        size = n;
         top = -1;
+        arr = new T[n];
+    }
+
+    ~Stack()
+    {
+        delete[] arr;
     }
 
     // Check whether stack is empty
@@ -25,11 +32,11 @@ public:
     // Check whether stack is full
     bool isFull()
     {
-        return top == SIZE - 1;
+        return top == size - 1;
     }
 
     // Insert an element
-    void push(int value)
+    void push(T value)
     {
         if (isFull())
         {
@@ -44,7 +51,7 @@ public:
     }
 
     // Remove and return the top element
-    int pop()
+    T pop()
     {
         if (isEmpty())
         {
@@ -57,7 +64,7 @@ public:
     }
 
     // Return the top element without removing it
-    int peek()
+    T peek()
     {
         if (isEmpty())
         {
@@ -91,7 +98,7 @@ public:
 
 int main()
 {
-    Stack s;
+    Stack<char> s(5);
 
     cout << boolalpha;
 
@@ -101,9 +108,9 @@ int main()
     cout << "Is stack full? "
          << s.isFull() << endl;
 
-    s.push(10);
-    s.push(20);
-    s.push(30);
+    s.push('1');
+    s.push('1');
+    s.push('1');
 
     s.display();
 
@@ -115,10 +122,10 @@ int main()
 
     s.display();
 
-    s.push(40);
-    s.push(50);
-    s.push(60);
-    s.push(70); // Tests overflow
+    s.push('1');
+    s.push('1');
+    s.push('1');
+    s.push('1'); // Tests overflow
 
     s.display();
 
