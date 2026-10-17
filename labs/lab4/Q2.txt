@@ -1,0 +1,18 @@
+Size of U for a tridiagonal matrix B:
+For an n x n tridiagonal matrix, the non-zero elements lie on the main diagonal, upper diagonal, and lower diagonal.
+Number of elements on the main diagonal: n
+Number of elements on the upper diagonal: n - 1
+Number of elements on the lower diagonal: n - 1
+Total size of 1D array U = n + (n - 1) + (n - 1) = 3n - 2
+
+Formula for L if U[L] = B[J][K]:
+Assuming 0-based indexing for both the matrix B and the array U.
+Row 0 has 2 non-zero elements.
+Every row from 1 to J-1 has exactly 3 non-zero elements.
+Number of elements before row J (where J > 0) is: 2 + 3 * (J - 1) = 3J - 1.
+The first non-zero element in row J starts at column K = J - 1.
+So the offset of element B[J][K] within row J is K - (J - 1) = K - J + 1.
+Total index L = (3J - 1) + (K - J + 1) = 2J + K.
+If J = 0, the formula 2(0) + K = K also holds true because the first element is at K=0 and the second is at K=1.
+Therefore, the formula is:
+L = 2*J + K

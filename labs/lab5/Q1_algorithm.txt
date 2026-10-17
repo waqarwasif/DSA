@@ -1,0 +1,12 @@
+Algorithm: binarySearch(data, item)
+
+1. Initialize beg to 0 and end to the last index of the array.
+2. Repeat steps 3 and 4 while beg is less than or equal to end.
+3. Calculate mid as (beg + end) / 2.
+4. If the element at mid (data[mid]) equals item:
+       Return mid (search is successful).
+   Else if item is less than data[mid]:
+       Set end to mid - 1 (search the left half).
+   Else:
+       Set beg to mid + 1 (search the right half).
+5. If the loop ends without returning, the item is not in the array. Return -1.

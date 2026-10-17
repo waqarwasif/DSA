@@ -1,0 +1,13 @@
+Analysis of Binary Search Algorithm:
+
+1. Best Case:
+The best-case scenario occurs when the item being searched for is exactly at the middle index of the array on the first attempt. In this case, the algorithm makes only one comparison and returns the result immediately.
+Time Complexity: O(1)
+
+2. Average Case:
+In the average case, the item could be anywhere in the array. The algorithm repeatedly divides the search space in half. On average, it will take logarithmic time to find the element or conclude that it is not present.
+Time Complexity: O(log n)
+
+3. Worst Case:
+The worst-case scenario happens when the item is either not present in the array at all, or it is located at the very ends of the array, requiring the maximum number of divisions. Since the array size is halved at each step, the maximum number of steps required is log base 2 of n.
+Time Complexity: O(log n)

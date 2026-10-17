@@ -1,0 +1,3 @@
+Real-World Use of Binary Search:
+
+A common real-world use of binary search is looking up a word in a physical dictionary. You map this to the algorithm by initially considering the whole dictionary (beg is the first page, end is the last page). You open the dictionary roughly in the middle (mid); if the word you want comes alphabetically before the words on the middle page, you ignore the right half (set end to mid - 1) and repeat the process on the left half, otherwise you search the right half (set beg to mid + 1), continuing until you find the exact word.
